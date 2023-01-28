@@ -26,6 +26,6 @@ endif()
 ament_package()
 
 install(
-  DIRECTORY src launch meshes
+  DIRECTORY src meshes
   DESTINATION share/${PROJECT_NAME}
   )
