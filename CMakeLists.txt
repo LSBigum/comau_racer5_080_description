@@ -26,6 +26,6 @@ endif()
 ament_package()
 
 install(
-  DIRECTORY src meshes
+  DIRECTORY src launch rviz meshes
   DESTINATION share/${PROJECT_NAME}
   )
