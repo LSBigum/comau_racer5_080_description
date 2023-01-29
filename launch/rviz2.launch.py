@@ -1,3 +1,6 @@
+import os
+import xacro
+from ament_index_python.packages import get_package_share_directory
 from ament_index_python.packages import get_package_share_path
 
 from launch import LaunchDescription
@@ -9,8 +12,9 @@ from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
-    package_path = get_package_share_path('comau_racer5_080_description')
-    default_model_path = package_path / 'src/description/comau.urdf.xacro'
+    package_name = 'comau_racer5_080_description'
+    package_path = get_package_share_path(package_name)
+    default_model_path = package_path / 'urdf/comau.urdf.xacro'
     default_rviz_config_path = package_path / 'rviz/urdf.rviz'
 
     gui_arg = DeclareLaunchArgument(name='gui', default_value='true', choices=['true', 'false'],
@@ -20,8 +24,9 @@ def generate_launch_description():
     rviz_arg = DeclareLaunchArgument(name='rvizconfig', default_value=str(default_rviz_config_path),
                                      description='Absolute path to rviz config file')
 
-    robot_description = ParameterValue(Command(['xacro ', LaunchConfiguration('model')]),
-                                       value_type=str)
+     # Use xacro to process the file
+    xacro_file = os.path.join(package_path,default_model_path)
+    robot_description = xacro.process_file(xacro_file).toxml()
 
     robot_state_publisher_node = Node(
         package='robot_state_publisher',

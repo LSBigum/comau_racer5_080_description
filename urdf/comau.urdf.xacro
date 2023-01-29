@@ -3,11 +3,13 @@
 
     <xacro:include filename="materials.xacro"/>
 
+    <xacro:property name="r2d" value="${pi/180}"/>
+    <xacro:property name="meshes_path" value="package://comau_racer5_080_description/meshes"/>
     <link name="base_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://comau_racer5_080_description/meshes/Base.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="${meshes_path}/Base.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="grey"/>
         </visual>
@@ -17,7 +19,7 @@
         <visual>
             <origin xyz="0 0 0.19" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://comau_racer5_080_description/meshes/Q1.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="${meshes_path}/Q1.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="grey"/>
         </visual>
@@ -27,14 +29,14 @@
         <axis xyz="0 0 1"/>
        <parent link="base_link"/>
        <child link="q1_link"/>
-       <limit lower="-2.9671" upper="2.9671" effort="0.0" velocity="6.98131701"/>
+       <limit lower="-${r2d*170}" upper="${r2d*170}" effort="0.0" velocity="${r2d*400}"/>
     </joint>
     
     <link name="q2_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://comau_racer5_080_description/meshes/Q2.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="${meshes_path}/Q2.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="grey"/>
         </visual>
@@ -45,14 +47,14 @@
        <origin xyz="0.050 0.0 0.365"/>
        <parent link="q1_link"/>
        <child link="q2_link"/>
-       <limit lower="-1.48352986" upper="2.35619449" effort="0.0" velocity="6.28318531"/>
+       <limit lower="-${r2d*85}" upper="${r2d*135}" effort="0.0" velocity="${r2d*360}"/>
     </joint>
 
     <link name="q3_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://comau_racer5_080_description/meshes/Q3.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="${meshes_path}/Q3.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="grey"/>
         </visual>
@@ -63,7 +65,7 @@
        <origin xyz="0 0 0.370"/>
        <parent link="q2_link"/>
        <child link="q3_link"/>
-       <limit lower="-2.70526034" upper="1.57079633" effort="0.0" velocity="6.98131701"/>
+       <limit lower="-${r2d*155}" upper="${r2d*90}" effort="0.0" velocity="${r2d*400}"/>
     </joint>
     
 
@@ -71,7 +73,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://comau_racer5_080_description/meshes/Q4.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="${meshes_path}/Q4.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="grey"/>
         </visual>
@@ -82,14 +84,14 @@
        <origin xyz="0 0 0.050"/>
        <parent link="q3_link"/>
        <child link="q4_link"/>
-       <limit lower="-3.4906585" upper="3.4906585" effort="0.0" velocity="8.72664626"/>
+       <limit lower="-${r2d*200}" upper="${r2d*200}" effort="0.0" velocity="${r2d*500}"/>
     </joint>
 
     <link name="q5_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://comau_racer5_080_description/meshes/Q5.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="${meshes_path}/Q5.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="grey"/>
         </visual>
@@ -100,14 +102,14 @@
        <origin xyz="0.38594 0 0"/>
        <parent link="q4_link"/>
        <child link="q5_link"/>
-       <limit lower="-2.18166156" upper="2.18166156" effort="0.0" velocity="8.72664626"/>
+       <limit lower="-${r2d*125}" upper="${r2d*125}" effort="0.0" velocity="${r2d*500}"/>
     </joint>
 
     <link name="q6_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://comau_racer5_080_description/meshes/Q6.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="${meshes_path}/Q6.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="grey"/>
         </visual>
@@ -118,7 +120,7 @@
        <origin xyz="0.080 0 0"/>
        <parent link="q5_link"/>
        <child link="q6_link"/>
-       <limit lower="-47.1238898" upper="47.1238898" effort="0.0" velocity="13.962634"/>
+       <limit lower="-${r2d*2700}" upper="${r2d*2700}" effort="0.0" velocity="${r2d*800}"/>
     </joint>
 
 </robot>
