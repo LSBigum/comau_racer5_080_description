@@ -20,8 +20,9 @@ def generate_launch_description():
     package_path = os.path.join(
         get_package_share_directory(package_name))
         
-    xacro_file = os.path.join(package_path, 'urdf', 'comau.urdf.xacro')
-    #xacro_file = os.path.join(package_path, 'urdf', 'example_robot.urdf.xacro')
+    # xacro_file = os.path.join(package_path, 'urdf', 'comau.urdf.xacro')
+    xacro_file = os.path.join(package_path, 'urdf', 'comau_racer5_080.xacro')
+    # xacro_file = os.path.join(package_path, 'urdf', 'example_robot.urdf.xacro')
     
     doc = xacro.parse(open(xacro_file))
     xacro.process_doc(doc)

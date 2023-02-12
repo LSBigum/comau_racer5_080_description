@@ -14,7 +14,7 @@ from launch_ros.parameter_descriptions import ParameterValue
 def generate_launch_description():
     package_name = 'comau_racer5_080_description'
     package_path = get_package_share_path(package_name)
-    default_model_path = package_path / 'urdf/comau.urdf.xacro'
+    default_model_path = package_path / 'urdf/comau_racer5_080.xacro'
     default_rviz_config_path = package_path / 'rviz/urdf.rviz'
 
     gui_arg = DeclareLaunchArgument(name='gui', default_value='true', choices=['true', 'false'],
