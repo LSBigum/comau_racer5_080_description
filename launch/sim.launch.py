@@ -5,8 +5,10 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
+from launch.actions import DeclareLaunchArgument
 
 from launch_ros.actions import Node
+
 
 def generate_launch_description():
     package_name = 'comau_racer5_080_description'
@@ -14,10 +16,12 @@ def generate_launch_description():
     launch_directory = os.path.join(package_path, 'launch')
 
     gazebo = IncludeLaunchDescription(
-                PythonLaunchDescriptionSource([launch_directory, '/gazebo.launch.py']),)
-        
+        PythonLaunchDescriptionSource([launch_directory, '/gazebo.launch.py']),
+    )
+
     rviz = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([launch_directory, '/rviz2.launch.py']),)
+        PythonLaunchDescriptionSource([launch_directory, '/rviz2.launch.py']),
+    )
 
     return LaunchDescription([
         gazebo,
