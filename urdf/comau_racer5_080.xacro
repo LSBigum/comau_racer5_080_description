@@ -211,6 +211,34 @@
     <limit lower="-${r2d*2700}" upper="${r2d*2700}" effort="0.0" velocity="${r2d*800}"/>
   </joint>
 
+  <gazebo reference="base_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  
+  <gazebo reference="q1_link_1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="q2_link_1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="q3_link_1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="q4_link_1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="q5_link_1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  
+  <gazebo reference="q6_link_1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
   <gazebo>
     <plugin name="gazebo_ros_joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
       <update_rate>20</update_rate>
