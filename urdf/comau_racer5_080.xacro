@@ -1,10 +1,11 @@
 <?xml version="1.0" ?>
 <robot name="comau_racer5_080"
   xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:property name="package_name" value="comau_racer5_080_description"/>
 
-  <xacro:include filename="$(find comau_racer5_080_description)/urdf/materials.xacro" />
-  <xacro:include filename="$(find comau_racer5_080_description)/urdf/comau_racer5_080.trans" />
-  <xacro:include filename="$(find comau_racer5_080_description)/urdf/comau_racer5_080.gazebo" />
+  <xacro:include filename="$(find ${package_name})/urdf/materials.xacro" />
+  <xacro:include filename="$(find ${package_name})/urdf/comau_racer5_080.trans" />
+  <xacro:include filename="$(find ${package_name})/urdf/comau_racer5_080.gazebo" />
 
   <xacro:property name="r2d" value="${pi/180}"/>
   
@@ -19,14 +20,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/base_link.stl"/>
+        <mesh filename="package://${package_name}/meshes/base_link.stl"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/base_link.stl"/>
+        <mesh filename="package://${package_name}/meshes/base_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -40,14 +41,14 @@
     <visual>
       <origin xyz="-0.0 -0.0 -0.1885" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q1_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q1_link_1.stl"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.0 -0.0 -0.1885" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q1_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q1_link_1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -61,14 +62,14 @@
     <visual>
       <origin xyz="-0.05 0.0005 -0.364" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q2_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q2_link_1.stl"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.05 0.0005 -0.364" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q2_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q2_link_1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -82,35 +83,35 @@
     <visual>
       <origin xyz="-0.05 0.0005 -0.734" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q3_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q3_link_1.stl"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.05 0.0005 -0.734" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q3_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q3_link_1.stl"/>
       </geometry>
     </collision>
   </link>
 
   <link name="q4_link_1">
     <inertial>
-      <origin xyz="0.2353593069196668 0.0002849467185024402 9.063347748228257e-05" rpy="0 0 0"/>
+      <origin xyz="0.2353593069196668 0.0 0.0" rpy="0 0 0"/>
       <mass value="1.7488722435466972"/>
-      <inertia ixx="0.004495" iyy="0.030823" izz="0.03138" ixy="9.5e-05" iyz="-6e-06" ixz="3.1e-05"/>
+      <inertia ixx="0.004495" iyy="0.030823" izz="0.03138" ixy="0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
       <origin xyz="-0.0905 0.0005 -0.783998" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q4_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q4_link_1.stl"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.0905 0.0005 -0.783998" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q4_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q4_link_1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -118,20 +119,20 @@
   <link name="q5_link_1">
     <inertial>
       <origin xyz="0.027292159537539107 0.0013712897030821692 -5.1641371843214046e-06" rpy="0 0 0"/>
-      <mass value="1.0620704849356615"/>
-      <inertia ixx="0.000551" iyy="0.001042" izz="0.001076" ixy="3.6e-05" iyz="0.0" ixz="-0.0"/>
+      <mass value="0.5620704849356615"/>
+      <inertia ixx="0.000551" iyy="0.001042" izz="0.001076" ixy="0.0" iyz="0.0" ixz="-0.0"/>
     </inertial>
     <visual>
       <origin xyz="-0.4355 0.0005 -0.783998" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q5_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q5_link_1.stl"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.4355 0.0005 -0.783998" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q5_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q5_link_1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -145,14 +146,14 @@
     <visual>
       <origin xyz="-0.5065 0.0005 -0.783998" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q6_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q6_link_1.stl"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin xyz="-0.5065 0.0005 -0.783998" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://comau_racer5_080_description/meshes/q6_link_1.stl"/>
+        <mesh filename="package://${package_name}/meshes/q6_link_1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -169,6 +170,7 @@
     <child link="q1_link_1"/>
     <axis xyz="-0.0 -0.0 -1.0"/>
     <limit lower="-${r2d*170}" upper="${r2d*170}" effort="0.0" velocity="${r2d*400}"/>
+    <dynamics damping="0.001" friction="0.001"/>
   </joint>
 
   <joint name="q2_joint" type="revolute">
@@ -177,6 +179,7 @@
     <child link="q2_link_1"/>
     <axis xyz="0.0 1.0 -0.0"/>
     <limit lower="-${r2d*85}" upper="${r2d*135}" effort="0.0" velocity="${r2d*360}"/>
+    <dynamics damping="0.001" friction="0.001"/>
   </joint>
 
   <joint name="q3_joint" type="revolute">
@@ -185,6 +188,7 @@
     <child link="q3_link_1"/>
     <axis xyz="-0.0 1.0 -0.0"/>
     <limit lower="-${r2d*155}" upper="${r2d*90}" effort="0.0" velocity="${r2d*400}"/>
+    <dynamics damping="0.001" friction="0.001"/>
   </joint>
 
   <joint name="q4_joint" type="revolute">
@@ -193,6 +197,7 @@
     <child link="q4_link_1"/>
     <axis xyz="1.0 0.0 0.0"/>
     <limit lower="-${r2d*200}" upper="${r2d*200}" effort="0.0" velocity="${r2d*500}"/>
+    <dynamics damping="0.001" friction="0.001"/>
   </joint>
 
   <joint name="q5_joint" type="revolute">
@@ -201,6 +206,7 @@
     <child link="q5_link_1"/>
     <axis xyz="0.0 1.0 -0.0"/>
     <limit lower="-${r2d*125}" upper="${r2d*125}" effort="0.0" velocity="${r2d*500}"/>
+    <dynamics damping="0.001" friction="0.001"/>
   </joint>
 
   <joint name="q6_joint" type="revolute">
@@ -209,6 +215,7 @@
     <child link="q6_link_1"/>
     <axis xyz="1.0 -0.0 0.0"/>
     <limit lower="-${r2d*2700}" upper="${r2d*2700}" effort="0.0" velocity="${r2d*800}"/>
+    <dynamics damping="0.001" friction="0.001"/>
   </joint>
 
   <gazebo reference="base_link">
@@ -248,6 +255,59 @@
       <joint_name>q4_joint</joint_name>
       <joint_name>q5_joint</joint_name>
       <joint_name>q6_joint</joint_name>
+    </plugin>
+  </gazebo>
+  
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    <joint name="q1_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="q2_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="q3_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="q4_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="q5_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="q6_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <parameters>$(find ${package_name})/config/comau_racer5_080_controllers.yaml</parameters>
     </plugin>
   </gazebo>
 

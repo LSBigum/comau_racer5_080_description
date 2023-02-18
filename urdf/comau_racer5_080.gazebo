@@ -35,6 +35,13 @@
   <selfCollide>true</selfCollide>
 </gazebo>
 
+<gazebo reference="q6_link_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
 <gazebo reference="q4_link_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
@@ -43,13 +50,6 @@
 </gazebo>
 
 <gazebo reference="q5_link_1">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
-
-<gazebo reference="q6_link_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
